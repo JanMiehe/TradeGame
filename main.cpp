@@ -2,11 +2,12 @@
 #include <cstdlib>
 using namespace std;
 
+bool game = true;
 int money=500;
 int input;
 int win;
-bool game = true;
 int lose;
+int persentache;
 
 int main(){
     srand(time(0)); // the random number is generated from hier
@@ -37,26 +38,18 @@ int main(){
 
 
 
+        persentache=rand()%100;
 
 
-        while(input !== 1 && !==2){
-
-            if (input==1){
-                
+        if (input==1){
+            if(persentache<=win){
                 money+=500;
-                cout<<money<<rand()%100;
-                break;
-
+                cout<<money;
             }
             else{
-
-
-                cout<<"Your coc sucker you can only write 1,2 or 3!!!";
-                continue;
-
+                money-200;
+                cout<<money;
             }
-        }
-
-    return 0;
     }   
+    return 0;
 }
