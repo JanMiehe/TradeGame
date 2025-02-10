@@ -1,44 +1,54 @@
 #include <iostream>
 #include <cstdlib>
-#include <ctime>
 using namespace std;
 
 bool game = true;
-int money = 500;
+int money=500;
 int input;
 int win;
 int lose;
-double percentage;
+int winMoney;
+int loseMoney;
+double persentache;
 
-int main() {
-    srand(time(0)); // Seed once at the beginning
+int main(){
+    
+   cout << "-- This is a test to identify if you are a solo or a single Player --" << endl;
+   cout<<"bankacount: "<<money<<"$"<<endl<<endl;
 
-    cout << "-- This is a test to identify if you are a solo or a single Player --" << endl;
+    while(money > 0){
 
-    while (game) {
-        win = rand() % 100;
+         srand(time(0)); // the random number is generated from hier
+    
+         win =  rand()%100;
+    
         lose = 100 - win;
-        percentage = rand() % 100;
+        winMoney = rand()%10 * 100;
+        loseMoney = rand()%10 * 100;
 
-        cout << win << "% win: +500$ " << lose << "% lose: -200$" << endl;
-        cout << "Type (1) to Play \nType (2) to Exit" << endl;
-        cin >> input;
+        persentache = rand()%100;
 
-        if (input == 1) {
-            if (percentage < win) {
-                money += 500;
-                cout << "You won! Current money: " << money << endl;
-            } else {
-                money -= 200;
-                cout << "You lost! Current money: " << money << endl;
+
+        cout<<win<<"% win: "<<winMoney<<"$ "<<lose<<"% lose: -"<<loseMoney<<"$ "<<endl;
+
+        cout << "[1] go trading [2] stay in harbor" << endl;
+
+        cin>>input;
+        
+        cout<<"--Next Day--"<<endl;
+
+        if (input==1){
+            if(persentache<=win){
+                money+=winMoney;
+                cout<<"Ship returnd"<<endl<<"bankacount: "<<money<<"$"<<" +"<<winMoney<<"$"<<endl<<endl;
             }
-        } else if (input == 2) {
-            game = false; // Exit the game
-            cout << "Exiting game. Final money: " << money << endl;
-        } else {
-            cout << "Invalid input. Try again." << endl;
-        }
+            else{
+                money-=loseMoney;
+                cout<<"Ship losed"<<endl<<"bankacount: "<<money<<"$"<<" -"<<loseMoney<<"$"<<endl<<endl;
+            }
+        }   
+        
     }
-
+    
+    cout<<"bankruptcy";
     return 0;
-}
