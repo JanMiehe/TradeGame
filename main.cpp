@@ -24,10 +24,35 @@ int col(int a){
 int main(){
 
     srand(time(0)); // the random number is generated from hier
-    
-   cout << "-- This is a test to identify if you are a solo or a single Player --" << endl;
-   cout<<"bankacount: "<<money<<"$"<<endl<<endl;
+    cout<<endl<<endl;
+    col(0xf0);
+    cout<<" ##### ##### ##### ####  #####       ##### ##### ##### ##### ";
+    col(0x07);
+    cout<<endl;
+    col(0xf0);
+    cout<<"   #   #   # #   # #   # #           #     #   # # # # #     ";
+    col(0x07);
+    cout<<endl;
+    col(0xf0);
+    cout<<"   #   #   # #   # #   # #           #     #   # # # # #     ";
+    col(0x07);
+    cout<<endl;
+    col(0xf0);
+    cout<<"   #   ####  #   # #   # ####        # ### #   # # # # ####  ";
+    col(0x07);
+    cout<<endl;
+    col(0xf0);
+    cout<<"   #   #   # ##### #   # #           #   # ##### # # # #     ";
+    col(0x07);
+    cout<<endl;
+    col(0xf0);
+    cout<<"   #   #   # #   # ####  #####       ##### #   # # # # ##### ";
+    col(0x07);
+    cout<<endl<<endl<<endl;
 
+
+    cout << "-- This is a test to identify if you are a solo or a single Player --" << endl;
+    cout<<"bankacount: "<<money<<"$"<<endl<<endl;
     while(money > 0){
 
         win =  rand()%100;
@@ -44,7 +69,7 @@ int main(){
         cout<<lose<<"% lose: -"<<loseMoney<<"$ "<<endl;
         col(7);
 
-        cout << "[1] go trading [2] stay in harbor" << endl;
+        cout << "[1] go trading [2] stay in harbor" << endl<<">";
 
         cin>>input;
         
